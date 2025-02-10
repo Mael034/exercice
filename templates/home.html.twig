@@ -1,0 +1,18 @@
+ {% extends 'base.html.twig' %}
+
+ {% block body %}
+ <div class="container">
+    <div class="container" x-data="{ open: false }">
+        <button class="btn btn-primary" @click="open = !open">Afficher les films</button>
+        <div x-show="open" class="mt-2 p-2 bg-gray-200">
+    {% for film in films %}
+        <div class="card">
+            <a href="{{ path('get_one_movie', {'id': film.id}) }}">
+                <h1>{{film.title}}</h1>
+                <p>{{film.description}}</p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+</div>
+ {% endblock %}

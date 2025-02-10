@@ -1,0 +1,8 @@
+twig:
+    file_name_pattern: '*.twig'
+    globals:
+            root_path: '%kernel.project_dir%'
+
+when@test:
+    twig:
+        strict_variables: true
